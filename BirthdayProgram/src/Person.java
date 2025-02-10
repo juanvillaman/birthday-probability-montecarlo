@@ -9,6 +9,10 @@ public class Person {
   Random rand = new Random();
 
   public Person(){
+    generateBirthdays();
+  }
+
+  public void generateBirthdays(){
     month = rand.nextInt(12) + 1;
 
     if (month == 2){
