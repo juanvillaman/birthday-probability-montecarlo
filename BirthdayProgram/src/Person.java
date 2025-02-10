@@ -25,6 +25,30 @@ public class Person {
       day = rand.nextInt(30) + 1;
     }
   }
+
+  public int getMonth(){
+    return month;
+  }
+
+  public int getDay(){
+    return day;
+  }
+
+  public static boolean containsSharedBirthday(int personCount){
+    ArrayList<String> birthdays = new ArrayList<String>();
+
+    for(int i = 0; i < personCount; i++){
+      Person person = new Person();
+      String birthday = person.getMonth() + "/" + person.getDay();
+
+      if (birthdays.contains(birthday)){
+        return true;
+      }
+
+      birthdays.add(birthday);
+    }
+    return false;
+  }
 }
 
 
