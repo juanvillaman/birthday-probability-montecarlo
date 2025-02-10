@@ -49,6 +49,17 @@ public class Person {
     }
     return false;
   }
+
+  public double calculateBirthdayProbability(int personCount, int simulationAmount){
+    int count = 0;
+
+    for (int i = 0; i < simulationAmount; i++){
+      if(containsSharedBirthday(personCount)){
+        count++;
+      }
+    }
+    
+    return (double) count / simulationAmount * 100;
+  }
+  
 }
-
-
